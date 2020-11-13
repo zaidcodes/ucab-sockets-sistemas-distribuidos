@@ -66,7 +66,6 @@ class Client:
         client_ip = sock.getsockname()[0]
         return client_ip
 
-    # def hello(self, username = "jcdiaz.15"):
     def hello(self, username = "usuario_1"):
         client_ip = self.local_ip()
         message = "helloiam " + username
