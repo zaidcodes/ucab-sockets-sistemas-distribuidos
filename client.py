@@ -37,7 +37,6 @@ class Client:
     def listen_message(self):
         response = ""
         sock = self.get_sock_udp()
-        # raise timeout
         try:
             while len(response) < self.message_len:
                 response = sock.recv(2048)
@@ -49,7 +48,7 @@ class Client:
     def get_sock_tcp(self):
         if self.sock_tcp is None:
             self.sock_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.sock_tcp.settimeout(7.0)
+            self.sock_tcp.settimeout(20.0)
             self.sock_tcp.connect((self.ip, self.tcp_port))
         return self.sock_tcp
     
@@ -57,7 +56,7 @@ class Client:
         local_ip = self.local_ip()
         if self.sock_udp is None:
             self.sock_udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            self.sock_udp.settimeout(7.0)
+            self.sock_udp.settimeout(20.0)
             self.sock_udp.bind((local_ip, self.udp_port))
         return self.sock_udp
     
