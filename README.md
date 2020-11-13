@@ -1,7 +1,21 @@
-# ucab-sockets-sistemas-distribuidos
-Practica numero 3 - Trabajando con sockets - Sistemas distribuidos UCAB
+# Socket client with Python
+Working with sockets - Sistemas distribuidos UCAB
 
-# run
+## Use
+
 ```
-py .\main.py
+$ python main.py <server-ip> <server-port> <username>
 ```
+
+## Examples
+
+```
+$ python main.py 127.0.0.1 19876 usuario_1
+```
+```
+$ python main.py 127.0.0.1 19876 usuario_2
+```
+
+---
+# Server getmymsg
+[Getmymsg](https://gitlab.com/ucab-ds/getmymsg)
