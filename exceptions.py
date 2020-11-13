@@ -44,3 +44,11 @@ class BadChecksumException(Exception):
     def __init__(self, checksum):
         self.checksum = checksum
         super().__init__(self.message.format(checksum = checksum))
+
+
+class MaxAttemptsUdpMessageException(Exception):
+    message = 'Se ha alcanzado el máximo de intentos ({attempts}) para recuperar su mensaje'
+
+    def __init__(self, attempts):
+        self.attempts = attempts
+        super().__init__(self.message.format(attempts = attempts))
