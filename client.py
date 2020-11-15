@@ -104,7 +104,8 @@ class Client:
 
         while valid_len == False and attempt < max_attempts:
             self.request_message()
-            print("Intentando recuperar el mensaje intento [", attempt + 1, "]")
+            if attempt >= 1:
+                print("Intentando recuperar el mensaje (intento [", attempt + 1, "])")
             try:
                 self.b64_message = self.listen_message()
             except socket.timeout:
