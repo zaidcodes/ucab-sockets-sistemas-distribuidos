@@ -52,3 +52,10 @@ class MaxAttemptsUdpMessageException(Exception):
     def __init__(self, attempts):
         self.attempts = attempts
         super().__init__(self.message.format(attempts = attempts))
+
+class MaxAttemptsCorrectMessageException(Exception):
+    message = 'Se ha alcanzado el máximo de intentos ({attempts}) para recuperar el mesaje correcto'
+
+    def __init__(self, attempts):
+        self.attempts = attempts
+        super().__init__(self.message.format(attempts = attempts))
